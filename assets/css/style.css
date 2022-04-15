@@ -1,12 +1,37 @@
-*{
+body{
     background-color: aqua;
 }
- .card{
-     background-color: white;
-     height: 400px;
-     width: 400px;
- }
+.container-fluid{
+    padding: 1rem;
+}
+.card{
+    background-color: white;
+    height: 450px;
+    width: 400px;
+    padding: 1rem;
+}
 
- h1{
-     margin-bottom: -4px;
- }
+h1{
+    margin-bottom: -4px;
+}
+
+.profile_img{
+    border-radius: 100%;
+    width: 35%;
+    margin-right: -5rem;
+}
+
+.main_img{
+    height: 220px;
+    width: 100%;
+    padding-top: 1rem;
+}
+.data{
+    font-size: x-small;
+}
+.testo, .bottoni{
+    padding-top: 0.5rem;
+}
+.likes:hover{
+    cursor: pointer;
+}
