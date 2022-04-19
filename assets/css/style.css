@@ -1,5 +1,5 @@
 body{
-    background-color: aqua;
+    background-color: #023047;
 }
 .container-fluid{
     padding: 1rem;
@@ -13,6 +13,7 @@ body{
 
 h1{
     margin-bottom: -4px;
+    color: white;
 }
 
 .profile_img{
@@ -32,6 +33,9 @@ h1{
 .testo, .bottoni{
     padding-top: 0.5rem;
 }
-.likes:hover{
+.likes_0:hover, .likes_1:hover{
     cursor: pointer;
+}
+.likes_0:active, .likes_1:active{
+    color:cadetblue;
 }

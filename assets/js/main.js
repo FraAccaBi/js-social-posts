@@ -73,10 +73,10 @@ while (i < post.length) {
             </div>
         </div>
         <div class="bottoni d-flex row row-cols-2 text-center">
-            <div class="likes col">
+            <div class="likes_${i} col">
             <i class="fa-solid fa-thumbs-up"></i> Mi piace
             </div>
-            <div class="numero_likes col">Piace a ${element.likes} persone</div>
+            <div class="numero_likes_${i} col">Piace a ${element.likes} persone</div>
         </div>
         </div>
     `
@@ -87,12 +87,21 @@ console.log(element_likes);
 /* Milestone 3
 Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo. Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like. */
 
-let likes = document.querySelector('.likes')
-let numero_likes = document.querySelector('.numero_likes')
+for(let i = 0; i < element_likes.length; i++){
+    let likes = document.querySelector(`.likes_${i}`)
+    let numero_likes = document.querySelector(`.numero_likes_${i}`)
+    
+    likes.addEventListener('click', likesFunction)
 
-
-likes.addEventListener('click', function(){
-    element_likes[0] += 1
-    numero_likes.innerHTML = `Piace a ${element_likes[0]} persone` 
-})
-
+    function likesFunction() {
+        if ((likes.classList.contains('clicked')) === false){
+            element_likes[i] += 1
+            numero_likes.innerHTML = `Piace a ${element_likes[i]} persone` 
+            likes.classList.add('clicked')
+        } else {
+            element_likes[i] += - 1 
+            numero_likes.innerHTML = `Piace a ${element_likes[i]} persone`
+            likes.classList.remove('clicked')
+        }
+    }
+}
